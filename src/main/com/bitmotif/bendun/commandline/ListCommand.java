@@ -15,12 +15,20 @@ public class ListCommand implements Command {
    public String execute(List<FileSystemObservation> fileSystemObservations) {
       StringBuilder builder = new StringBuilder();
       for (FileSystemObservation fileSystemObservation : fileSystemObservations) {
-         builder.append(fileSystemObservation.getFileName());
-         builder.append(Constants.LINE_SEPARATOR);
+         appendHeader(builder, fileSystemObservation);
          appendModificationTimes(fileSystemObservation, builder);
-         builder.append(Constants.LINE_SEPARATOR);
+         appendLineBreak(builder);
       }
       return builder.toString();
+   }
+
+   private void appendHeader(StringBuilder builder, FileSystemObservation fileSystemObservation) {
+      builder.append(fileSystemObservation.getFileName());
+      appendLineBreak(builder);
+   }
+
+   private void appendLineBreak(StringBuilder builder) {
+      builder.append(Constants.LINE_SEPARATOR);
    }
 
    private void appendModificationTimes(FileSystemObservation fileSystemObservation, StringBuilder builder) {
@@ -28,7 +36,7 @@ public class ListCommand implements Command {
       for (Long modificationTime : modificationTimes) {
          builder.append("\t");
          builder.append(modificationTime);
-         builder.append(Constants.LINE_SEPARATOR);
+         appendLineBreak(builder);
       }
    }
 }
