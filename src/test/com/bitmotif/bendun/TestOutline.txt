@@ -1,0 +1,15 @@
+construct with a map (name and list pair)
+add a name and dir
+add a name and file
+add same thing multiple times
+add something that doesn't exist
+
+
+AT Level
+fire up empty
+add
+remove
+dump
+
+
+*****

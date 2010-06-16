@@ -1,0 +1,41 @@
+1/29/10
+Name of file
+
+
+1/26/10
+Action Command Factory
+
+Next:
+List giving total time worked on.
+
+===============================
+Remove functionality
+end functionality
+Directories
+Tags
+
+Want to kick it off, then say "add this to watch list"
+Every 5 minutes (parameterize for testing) go through watch list and find changes
+
+WatchList:
+If File, handle as degenerate case
+
+If Directory go through all subdirs and find if any dirs have changed
+the creation of a file or dir needs to be noted
+
+Must be able to add and subtract from watchlist
+each entry in watch list associated with a string describing task
+dump gives start time, end time, total time for description.
+
+
+for any description, take the earliest time for the entries and the latest time for
+the entries to calculate deltas
+
+bendun -start
+bendun -add "Description" fileName
+bendun -remove "Description" fileName
+bendun -dump
+bendun -end (will do a dump first)
+
+
+something that will hold tags, collection of last modified, file name
